@@ -1,0 +1,922 @@
+//Devices
+@mixin smallmobile {
+  @media only screen and (max-width: 354px) {
+    @content;
+  }
+}
+
+
+@mixin mobile {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media only screen and (min-width:480px ) and (max-width: 1040px) {
+    @content;
+  }
+}
+
+
+
+@mixin desktop {
+  @media only screen and (min-width: 740px) {
+    @content;
+  }
+}
+
+//CORE COLORS
+
+$White      : #fff;
+$Black     	: #000;
+$Silver     : #FAFAFA;
+$Gray       : #7f7f7f;
+$Pink 	    : #e40046;
+$Green      : #0FE3AD;
+
+
+// Core Typography 
+
+@mixin titles {
+  font-size: 51px;
+  line-height: 64px;
+  @include smallmobile {
+    font-size: 38px;
+    line-height: 48px;
+  }
+}
+
+
+@mixin subtitles {
+  font-size: 32px;
+  line-height: 40px;
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+@mixin regulartxt {
+  font-size: 16px;
+  line-height: 27px;
+}
+
+@mixin smalltxt {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+
+@font-face {
+  font-family: NeueHaasGroteskRegular;
+  src: url('../fonts/NeueHaasGroteskRegular.ttf');
+}
+
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('../fonts/TiemposHeadline-Regular.eot');
+  src: url('../fonts/TiemposHeadline-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/TiemposHeadline-Regular.woff') format('woff'),
+    url('../fonts/TiemposHeadline-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin mobilemargin {
+    margin-left:40px;
+    margin-right: 40px;
+}
+
+
+@mixin boximage {
+  position: relative;
+  height: 454px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  box-shadow: 72px 72px 256px 0 rgba(0,0,0,0.16);
+}
+
+
+@mixin fullmobimage {
+  width: calc(100% + 100px)!important;
+  margin-left: -50px !important
+}
+
+
+
+
+/*------------------------------------*\
+    1. Header
+\*------------------------------------*/
+
+.header {
+  width: 100%;
+  height: 30px;
+  margin-top:40px;
+  margin-bottom:40px;
+  
+}
+
+.logo {
+  @include mobile {
+    display: block;
+    width: 200px;
+    margin:0 auto;
+    padding-bottom:40px;
+  }
+}
+
+.wondermenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+  @include mobile {
+    width: 222px;
+    height: 30px;
+    float: none;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    
+  }
+
+}
+  
+  .wondermenu li {
+    float: left;
+    margin-right: 30px;
+
+  }
+
+    .wondermenu li:last-child {
+      margin-right: 0;
+    }
+
+    .wondermenu li a {
+      color: $Gray;
+
+    }
+
+    .wondermenu li a:hover {
+      color: $Black
+    }
+
+
+    .wondermenu li a.download {
+      color: $Pink;
+      @include mobile {
+        display: none
+      }
+    }
+
+    // a small hack for mobile menu aligment 
+    .mlast {
+      @include mobile {
+        margin-right: 0!important;
+      }
+    }
+
+/*------------------------------------*\
+    2. Footer
+\*------------------------------------*/
+
+.footercontent {
+  border-top: 4px solid $Silver;
+  padding-top:80px;
+  padding-bottom:80px;
+
+  @include mobile {
+    @include mobilemargin;
+    text-align: center
+  }
+
+}
+
+  .socialmenu {
+    list-style: none;
+    margin-top: 42px;
+    padding: 0;
+
+    @include mobile {
+      margin: 0 auto;
+      width: 220px;
+      height: 42px;
+    }
+
+
+  }
+
+  .socialmenu li {
+    float: left;
+    margin-right: 20px;
+    
+  }
+
+  .socialmenu li:last-child {
+    float: left;
+    margin-right:0px;
+    
+  }
+
+  .socialmenu li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent:-999999px;
+  }
+
+  .social_fb {
+    background: url(../img/ic_facebook.svg) no-repeat center center;
+  }
+
+  .social_twitter {
+    background: url(../img/ic_twitter.svg) no-repeat center center;
+  }
+
+  .social_instagram {
+    background: url(../img/ic_instagram.svg) no-repeat center center;
+  }
+
+  .social_linkedin {
+    background: url(../img/ic_linkedin.svg) no-repeat center center;
+  }
+
+
+
+  .footermenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include regulartxt;
+    @include mobile {
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+    }
+  }
+
+  .footermenu li {
+    margin: 10px 0;
+  }
+
+  .footermenu li a {
+    color: $Gray;
+  }
+
+  .footermenu li a:hover {
+    color: $Pink;
+  }
+
+  .footercontent form {
+    margin-top: 30px;
+  }
+
+  .footercontent input[type="email"] {
+    border:1px solid $Gray;
+    color: $Gray;
+    width: 100%;
+    @include regulartxt;
+    padding:14px;
+    border-radius: 10px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  .footercontent input[type="text"]:focus {
+    border:1px solid $Green;
+  }
+
+  .footercontent input[type="submit"] {
+    border:1px solid $Green;
+    background: url(../img/send_btn.svg) no-repeat center center $Green;
+    text-indent: -999999px;
+    width: 100%;
+    padding:20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+
+
+
+  .footercontent small {
+    display: block;
+    color: $Gray;
+    @include smalltxt;
+    margin-top: 10px;
+  }
+
+/*------------------------------------*\
+    3. Home page 
+\*------------------------------------*/
+
+.separator {
+  width: 100%;
+  height: 100px;
+}
+
+.hidems {
+  @include mobile {
+    display: none
+  }
+}
+
+.hero {
+  position: relative;
+  z-index: 3;
+
+  @include mobilemargin;
+
+  @include mobile {
+    z-index: 1;
+    position: none
+  }
+
+}
+
+.herotxt {
+  position: relative!important;
+  z-index: 300;
+}
+  .herotitle {
+    margin-top: 48px;
+  }
+
+  .herotxt h1 {
+    @include titles;
+    line-height: 64px;
+    
+  }
+
+  .herodsc {
+    margin-top: 54px;
+    margin-bottom: 54px;
+    padding-right:40%;
+
+    @include mobile {
+      padding-right:0;
+    }
+  }
+
+  .herodsc br {
+    @include mobile {
+      display: none;
+    }
+
+
+
+  }
+
+
+  .download_hero {
+    @include mobile {
+      display: none;
+    }
+  }
+
+
+.heroimg {
+  @include boximage;
+  
+  background-image:url('../img/hero.jpg');
+  
+
+  @include mobile {
+    height: 240px;
+    @include fullmobimage;
+  }
+
+
+}
+
+.herodevice {
+  position: absolute;
+  width: 720px;
+  height: 511px;
+  background-image:url('../img/header_phone.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  top:160px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+}
+
+
+
+//Feature 1 
+.fOne {
+  background:url('../img/feature_bg.png') no-repeat top center;
+  background-size: cover;
+  padding-top:150px;
+  position: relative!important;
+
+
+}
+
+.f0ne_image {
+  @include boximage;
+ 
+  background-image:url('../img/featureone.jpg');
+  position: relative!important;
+  z-index: 30;
+    @include mobile {
+       @include fullmobimage;
+      height: 240px;
+      margin-top:240px;
+    }
+}
+
+    .mimg_margin {
+      @include mobile {
+        @include mobilemargin
+      }
+    }
+
+.f0ne_txt {
+  
+  position: relative!important;
+
+    @include smallmobile {
+      padding-right: 0!important;
+    }
+
+    @include mobile {
+      padding-left:0;
+      padding-right:40px;
+
+    }
+}
+    
+    .f0ne_txt p {
+
+      @include smallmobile {
+        @include mobilemargin
+      }
+
+      @include mobile {
+        margin-left:40px;
+      }
+    }
+
+    .f0ne_txt p br {
+
+      @include mobile {
+        display: none
+      }
+    }
+
+
+
+  .fOne_line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
+    @include mobile {
+      @include mobilemargin;
+    }
+  }
+
+  .txt_highlight1 {
+    width: 512px;
+    height: 162px;
+    background-image:url('../img/highlight_1.png');
+    background-size:cover;
+    position: absolute;
+    z-index: 1;
+    top: 14px;
+    left: -220px;
+      @include mobile {
+        width:400px;
+        height:130px;
+        top: 30px;
+        left:-94px;
+      }
+
+  }
+ 
+
+  .fOne_device {
+    width: 264px;
+    height: 476px;
+    background-image:url('../img/feature_one_device.png');
+    background-size:cover;
+    position: absolute;
+    top:240px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 30;
+      @include mobile {
+        top:-80px;
+      }
+
+  }
+
+
+
+//Feature 2
+.fTwo {
+  position:relative;
+  padding-top: 80px;
+  @include mobile {
+    padding-top:0;
+    @include mobilemargin
+  }
+}
+
+
+.fTwo_txt {
+  position:relative!important;
+  z-index: 30;
+  padding-top:20px;
+}
+
+
+.fTwo_image {
+  @include boximage;
+  
+  background-image:url('../img/featuretwo.jpg');
+  position: relative!important;
+  z-index: 1;
+    @include mobile {
+      @include fullmobimage;
+      height: 240px;
+      margin-top:40px;
+    }
+}
+
+
+.fTwo_line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+  }
+
+
+.fTwo_device {
+    width: 600px;
+    height: 678px;
+    background-image:url('../img/feature_two_device.png');
+    background-size:cover;
+    position: absolute;
+    top:60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+      @include mobile {
+        display: none;
+      }
+
+}
+
+.fTwo_mdevice {
+  display: none;
+  @include mobile {
+    position:relative;
+    z-index: 30;
+    display: block;
+    margin-top:-80px;
+    margin-bottom: -80px;
+
+  }
+}
+
+
+//Feature 3
+.fThree {
+  position:relative;
+  padding-top: 120px;
+  @include mobile {
+    padding-top:0;
+    @include mobilemargin
+  }
+}
+
+
+  .fThree_txt {
+    position:relative!important;
+    z-index: 3;
+    padding-top:20px;
+  }
+
+  .fThree_txt p br {
+    @include mobile {
+      display: none;
+    }
+  }
+
+
+  .fThree_image {
+    @include boximage;
+    background-image:url('../img/featurethree.jpg');
+    position: relative!important;
+    z-index: 30;
+      @include mobile {
+        display: none;
+        height: 240px;
+        margin-top:40px;
+      }
+  }
+
+
+  .fThree_mobimage {
+    display: none;
+    @include boximage;
+
+    background-image:url('../img/featurethree.jpg');
+    position: relative!important;
+    z-index: 30;
+      @include mobile {
+        display: block;
+        height: 240px;
+        margin-top:40px;
+        @include fullmobimage;
+      }
+  }
+
+
+  .fThree_line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position:relative!important;
+    z-index: 3;
+    
+  }
+
+  .txt_highlight2 {
+    width: 512px;
+    height: 162px;
+    background-image:url('../img/highlight_1.png');
+    background-size:cover;
+    position: absolute;
+    z-index: 1;
+    top: 38px;
+    left: -260px;
+      @include mobile {
+        width:400px;
+        height:130px;
+        top: 48px;
+        left:-164px;
+      }
+
+  }
+
+
+
+.map_area {
+    background:url('../img/abt.jpg');
+    background-size:cover;
+    background-position: center;
+  
+}
+
+
+  .map_area_line {
+    margin-top:80px;
+    margin-bottom: 48px;
+    @include mobile {
+      @include mobilemargin
+    }
+  }
+
+  .map_content {
+    @include mobile {
+      width:calc(100% - 80px)!important;
+      @include mobilemargin
+    }
+  }
+
+
+
+.wfDownload {
+  //background: $Silver;
+}
+
+.wfDownloadContent {
+  @include mobile {
+    @include mobilemargin
+  }
+}
+
+
+.wfDownload_txt {
+  z-index: 30;
+  padding-top:20px;
+
+}
+
+
+.wfDownload_image {
+  @include boximage;
+  
+  background-image:url('../img/download.jpg');
+  z-index: 1;
+    @include mobile {
+      @include fullmobimage;
+      height: 240px;
+      margin-top:40px;
+    }
+}
+
+
+.wfDownload_line {
+    margin-top: 70px;
+    margin-bottom: 28px;
+    
+  }
+
+
+  .wfDownload_action {
+    margin-top: 38px;
+    @include mobile {
+      width: 170px;
+      margin: 38px auto;
+      margin-bottom: 0
+    }
+  }
+
+
+/*------------------------------------*\
+    4. Special content
+\*------------------------------------*/
+
+//Fixed mobile Download button
+
+#downloadbar {
+    display: none;
+    background-color: rgba(255, 255, 255, .8);
+    -webkit-backdrop-filter: blur(4em);
+    backdrop-filter: blur(4em);
+    padding:20px;
+    width:100%;
+    height:100px;
+    position:fixed; bottom:0; left:0;
+    z-index: 300;
+    @include mobile {
+      display: block;
+    }
+}
+
+.wfMDownload {
+    @include mobile {
+      width: 170px;
+      margin: 5px auto;
+    }
+  }
+
+/*------------------------------------*\
+     General styles
+\*------------------------------------*/
+
+* {  
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0; 
+  webkit-appearance: none;
+  outline: none;
+}
+
+body {
+  @include regulartxt;
+  font-family: 'NeueHaasGroteskRegular', sans-serif;
+
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Tiempos Headline';
+  color:$Black; 
+}
+
+h2 { 
+  @include subtitles;
+    }  
+
+h3 { 
+  @include subtitles;
+    }  
+
+
+h4 {margin:40px 0;
+}
+  
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration:none;
+  transition:color 0.20s linear 0s;
+  -o-transition:color 0.20s linear 0s;
+  -ms-transition:color 0.20s linear 0s;
+  -moz-transition:color 0.20s linear 0s;
+  -webkit-transition:color 0.20s linear 0s;
+  color: $Pink;
+}  
+a:hover { }
+
+p,li,dl,blockquote,table,kbd {
+  @include regulartxt;
+  color: $Gray;
+}
+
+.wf { color:$Pink; display:inline-block }
+
+
+b,strong {font-weight:700;}
+.text-center {text-align:center!important;}
+.text-right {text-align:right!important;}
+img {
+  border:0;
+  display:block;
+  height:auto;
+  max-width:100%;
+  width:auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+
+table {
+  background:none repeat scroll 0 0 #fff;
+  border:1px solid #f0f0f0;
+  border-collapse:collapse;
+  border-spacing:0;
+  text-align:left;
+  width:100%;
+}
+table tr td, table tr th {padding:0.625rem;}
+table tfoot, table thead,table tr:nth-of-type(2n) {background:none repeat scroll 0 0 #f0f0f0;}
+th,table tr:nth-of-type(2n) td {border-right:1px solid #fff;}
+td {border-right:1px solid #f0f0f0;}
+.size-960 .line,.size-1140 .line,.size-1280 .line {
+  margin:0 auto;
+  padding:0 0.625rem;
+}
+hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  clear:both;  
+  height:0; 
+  margin:2.5rem auto;
+}
+li {padding:0;}
+ul,ol {padding-left:1.25rem;}
+blockquote {
+  border:2px solid #f0f0f0;
+  padding:1.25rem;
+}
+cite {
+  color:#999;
+  display:block;
+  font-size:0.8rem;
+}
+cite:before {content:"— ";}
+dl dt {font-weight:700;}
+dl dd {margin-bottom:0.625rem;}
+dl dd:last-child {margin-bottom:0;}
+abbr {cursor:help;}
+abbr[title] {border-bottom:1px dotted;}
+kbd {
+  background: #152732 none repeat scroll 0 0;
+  color: #fff;
+  padding: 0.125rem 0.3125rem;
+}
+code, kbd, pre, samp {font-family: Menlo,Monaco,Consolas,"Courier New",monospace;}
+mark {
+  background: #F3F8A9 none repeat scroll 0 0;
+  padding: 0.125rem 0.3125rem;
+}
+
+form {outline:none; }
+
+
+.legal {
+  
+
+}
+
+.legal p {
+  margin-bottom:40px;
+}
+.legal ul li {
+  margin-bottom:20px;
+}
