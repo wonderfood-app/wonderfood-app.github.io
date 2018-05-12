@@ -55,7 +55,7 @@
       <!-- mobile only -->
       <div id="downloadbar">
          <div class="wfMDownload">
-            <a href="" class=""><img src="img/appstore_badge.svg"></a>
+            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="appstore_badge" id="appstore_badge_mobile_banner"><img src="img/appstore_badge.svg"></a>
         </div>
       </div>
       <!-- |||||||||  -->
@@ -72,7 +72,7 @@
             <p><span class="wf">Wonderfood</span> is the most delicious way <br /> to discover food and connect with <br />great foodies, just like you.</p>
             </div>
 
-            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download_hero"><img src="img/appstore_badge.svg"></a>
+            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download_hero appstore_badge" id="appstore_badge_header"><img src="img/appstore_badge.svg"></a>
           </div><!-- @end of herotxt -->
 
 
@@ -222,7 +222,7 @@
                 <p><span class="wf">Wonderfood</span> is available for free on iPhone and iPod Touch.  More platforms are coming soon!</p>
 
                 <div class="wfDownload_action">
-                <a href="https://itunes.apple.com/app/apple-store/id1197043840" class=""><img src="img/appstore_badge.svg"></a>
+                  <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="appstore_badge" id="appstore_badge_footer"><img src="img/appstore_badge.svg"></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -249,10 +249,10 @@
 
 
                 <ul class="socialmenu">
-                  <li><a href="http://urlgeni.us/facebook/wonderfood_app" class="social_fb" target="_blank">facebook</a></li>
-                  <li><a href="http://urlgeni.us/instagram/wonderfood_app" class="social_instagram" target="_blank">instagram</a></li>
-                  <li><a href="http://urlgeni.us/twitter/wonderfood_app" class="social_twitter" target="_blank">twitter</a></li>
-                  <li><a href="http://urlgeni.us/linkedin/wonderfood_app" class="social_linkedin" target="_blank">linkedin</a></li>
+                  <li><a href="https://urlgeni.us/facebook/wonderfood_app" class="social_fb" target="_blank" id="facebook">facebook</a></li>
+                  <li><a href="https://urlgeni.us/instagram/wonderfood_app" class="social_instagram" target="_blank" id="instagram">instagram</a></li>
+                  <li><a href="https://urlgeni.us/twitter/wonderfood_app" class="social_twitter" target="_blank" id="twitter">twitter</a></li>
+                  <li><a href="https://urlgeni.us/linkedin/wonderfood_app" class="social_linkedin" target="_blank" id="linkedin">linkedin</a></li>
                 </ul>
                </div>
 
@@ -362,7 +362,28 @@ $.fn.followTo = function ( pos ) {
 };
 
 $('#downloadbar').followTo(2980);
-         });	 
+
+            
+            // analytics
+            $('#mc-embedded-subscribe').click(function () {
+              window.ga('send', 'event', 'page_usage', 'subscribe_to_newsletter');
+            });
+
+            $('.socialmenu a').click(function () {
+              window.ga('send', 'event', 'open_social', 'click', this.id);
+            });
+
+            $('a.appstore_badge').click(function (){
+              window.ga('send', 'event', 'open_appstore', 'click', this.id);
+            });
+
+         });
+
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        window.ga('create', 'UA-81947314-2', 'auto');
+        window.ga('send', 'pageview');
+      </script>
+      <script src='//www.google-analytics.com/analytics.js'></script>
       </script>
    </body>
 </html>
