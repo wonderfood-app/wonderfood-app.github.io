@@ -241,7 +241,7 @@
                 <p><span class="wf">Wonderfood</span> is available for free on iPhone and iPod Touch.  More platforms are coming soon!</p>
 
                 <div class="wfDownload_action">
-                <a href="https://itunes.apple.com/app/apple-store/id1197043840" class=""><img src="img/appstore_badge.svg"></a>
+                <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="appstore_badge"><img src="img/appstore_badge.svg"></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -315,73 +315,27 @@
            
             </div>
       </footer>                                                                   
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>              
-      <script type="text/javascript" src=" "></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
       <script type="text/javascript">
-         jQuery(document).ready(function($) {	  
-           // Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
+        jQuery(document).ready(function ($) {
+          // analytics
+          $('#mc-embedded-subscribe').click(function () {
+            window.ga('send', 'event', 'page_usage', 'subscribe_to_newsletter');
+          });
+
+          $('.socialmenu a').click(function () {
+            window.ga('send', 'event', 'open_social', 'click', this.id);
+          });
+
+          $('a.appstore_badge').click(function () {
+            window.ga('send', 'event', 'open_appstore', 'click', this.id);
+          });
         });
-      }
-    }
-  });
 
-
-
-
-var windw = this;
-
-$.fn.followTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
-    
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                bottom: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                bottom: 0
-            });
-        }
-    });
-};
-
-$('#downloadbar').followTo(2980);
-         });	 
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        window.ga('create', 'UA-81947314-2', 'auto');
+        window.ga('send', 'pageview');
       </script>
+      <script src='https://www.google-analytics.com/analytics.js'></script>
    </body>
 </html>
