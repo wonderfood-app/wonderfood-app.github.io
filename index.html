@@ -45,8 +45,8 @@
             <ul class="wondermenu">
               <li><a href="#features">Features</a></li>
               <li><a href="#about">About</a></li>
-              <li class="mlast"><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank">Blog</a></li>
-              <li><a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download">Download</a></li>
+              <li class="mlast"><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank" class="analytics-event" data-ae-action="open_blog" data-ae-label="from_header">Blog</a></li>
+              <li><a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download analytics-event" data-ae-action="open_appstore" data-ae-label="from_header_link">Download</a></li>
             </ul>
            </div><!-- @end of  s-12 l-8 menu-container -->
 
@@ -57,7 +57,7 @@
       <!-- mobile only -->
       <div id="downloadbar">
          <div class="wfMDownload">
-            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="appstore_badge" id="appstore_badge_mobile_banner"><img src="img/appstore_badge.svg"></a>
+            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="analytics-event" data-ae-action="open_appstore" data-ae-label="from_custom_mobile_banner"><img src="img/appstore_badge.svg"></a>
         </div>
       </div>
       <!-- |||||||||  -->
@@ -74,7 +74,7 @@
             <p><span class="wf">Wonderfood</span> is the most delicious way <br /> to discover food and connect with <br />great foodies, just like you.</p>
             </div>
 
-            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download_hero appstore_badge" id="appstore_badge_header"><img src="img/appstore_badge.svg"></a>
+            <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="download_hero analytics-event" data-ae-action="open_appstore" data-ae-label="from_header_badge"><img src="img/appstore_badge.svg"></a>
           </div><!-- @end of herotxt -->
 
 
@@ -224,7 +224,7 @@
                 <p><span class="wf">Wonderfood</span> is available for free on iPhone and iPod Touch.  More platforms are coming soon!</p>
 
                 <div class="wfDownload_action">
-                  <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="appstore_badge" id="appstore_badge_footer"><img src="img/appstore_badge.svg"></a>
+                  <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="analytics-event" data-ae-action="open_appstore" data-ae-label="from_footer_badge"><img src="img/appstore_badge.svg" id="appstore_badge_footer"></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -247,23 +247,23 @@
             <div class="footercontent">
 
                <div class="s-12 l-3">
-                <a href="#" class=" logo"><img src="img/wonderlogo.svg"></a>
+                <a href="#" class="logo"><img src="img/wonderlogo.svg"></a>
 
 
                 <ul class="socialmenu">
-                  <li><a href="https://urlgeni.us/facebook/wonderfood_app" class="social_fb" target="_blank" id="facebook">facebook</a></li>
-                  <li><a href="https://urlgeni.us/instagram/wonderfood_app" class="social_instagram" target="_blank" id="instagram">instagram</a></li>
-                  <li><a href="https://urlgeni.us/twitter/wonderfood_app" class="social_twitter" target="_blank" id="twitter">twitter</a></li>
-                  <li><a href="https://urlgeni.us/linkedin/wonderfood_app" class="social_linkedin" target="_blank" id="linkedin">linkedin</a></li>
+                  <li><a href="https://urlgeni.us/facebook/wonderfood_app" class="social_fb analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="facebook">facebook</a></li>
+                  <li><a href="https://urlgeni.us/instagram/wonderfood_app" class="social_instagram analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="instagram">instagram</a></li>
+                  <li><a href="https://urlgeni.us/twitter/wonderfood_app" class="social_twitter analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="twitter">twitter</a></li>
+                  <li><a href="https://urlgeni.us/linkedin/wonderfood_app" class="social_linkedin analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="linkedin">linkedin</a></li>
                 </ul>
                </div>
 
                <div class="s-12 l-2 l-offset-2">
                 <ul class="footermenu">
-                  <li><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank">Blog</a></li>
+                  <li><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank" class="analytics-event" data-ae-action="open_blog" data-ae-label="from_footer">Blog</a></li>
                   <li><a href="#about">About us</a></li>
-                  <li><a href="mailto:info@wonderfoodapp.com">Contact us</a></li>
-                  <li><a href="/legal">Legal</a></li>
+                  <li><a href="mailto:info@wonderfoodapp.com" class="analytics-event" data-ae-action="contact_us">Contact us</a></li>
+                  <li><a href="/legal" class="analytics-event" data-ae-action="open_legal">Legal</a></li>
                 </ul>
                </div>
 
@@ -284,7 +284,7 @@
 
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c966859cae2f6b8121a7ce238_de81a48134" tabindex="-1" value=""></div>
                   <div class="s-12 l-2 l-offset-1">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button analytics-event" data-ae-action="subscribe_to_newsletter">
                   </div>
                   
                 </form><!--end form -->
@@ -355,24 +355,15 @@
             });
           };
 
-          $('#downloadbar').followTo("#appstore_badge_footer img");
+          $('#downloadbar').followTo("#appstore_badge_footer");
 
-          
-
-
-          // analytics
-          $('#mc-embedded-subscribe').click(function () {
-            window.ga('send', 'event', 'page_usage', 'subscribe_to_newsletter');
+          $('.analytics-event').click(function () {
+            var $this = $(this);
+            var action = $this.data("ae-action");
+            var label = $this.data("ae-label");
+            if (label) { window.ga('send', 'event', 'page_usage', action, label); }
+            else { window.ga('send', 'event', 'page_usage', action); }
           });
-
-          $('.socialmenu a').click(function () {
-            window.ga('send', 'event', 'page_usage', 'open_social', this.id);
-          });
-
-          $('a.appstore_badge').click(function () {
-            window.ga('send', 'event', 'page_usage', 'open_appstore', this.id);
-          });
-
         });
 
         window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
