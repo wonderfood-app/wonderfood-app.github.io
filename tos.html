@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="apple-itunes-app" content="app-id=1197043840, affiliate-data=myAffiliateData, app-argument=https://itunes.apple.com/app/apple-store/id1197043840">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="robots" content="noindex, follow">
       <title>Wonderfood</title>
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/grid.css">
@@ -103,74 +104,5 @@
               <p>THE COMPANY MAKES NO REPRESENTATION THAT CONTENT PROVIDED ON WONDERFOOD, CONTRACTS, OR RELATED SERVICES ARE APPLICABLE OR APPROPRIATE FOR USE IN ALL JURISDICTIONS.</p>
 
               <hr>
-                                                                                 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>              
-      <script type="text/javascript" src=" "></script>  
-      <script type="text/javascript">
-         jQuery(document).ready(function($) {	  
-           // Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
-      }
-    }
-  });
-
-
-
-
-var windw = this;
-
-$.fn.followTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
-    
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                bottom: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                bottom: 0
-            });
-        }
-    });
-};
-
-$('#downloadbar').followTo(2980);
-         });	 
-      </script>
    </body>
 </html>

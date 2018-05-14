@@ -4,10 +4,20 @@
       <meta charset="UTF-8">
       <meta name="apple-itunes-app" content="app-id=1197043840, affiliate-data=myAffiliateData, app-argument=https://itunes.apple.com/app/apple-store/id1197043840">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="robots" content="noindex, follow">
       <title>Wonderfood</title>
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/grid.css">
  
+      <!-- Favicon-->
+      <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+      <link rel="manifest" href="img/favicons/manifest.json">
+      <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#ec0b43">
+      <link rel="shortcut icon" href="img/favicons/favicon.ico">
+      <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+      <meta name="theme-color" content="#ec0b43">
    </head>
    <body class="size-1140">
       <!-- HEADER -->
@@ -232,7 +242,7 @@
                 <p><span class="wf">Wonderfood</span> is available for free on iPhone and iPod Touch.  More platforms are coming soon!</p>
 
                 <div class="wfDownload_action">
-                <a href="https://itunes.apple.com/app/apple-store/id1197043840" class=""><img src="img/appstore_badge.svg"></a>
+                <a href="https://itunes.apple.com/app/apple-store/id1197043840" class="analytics-event" data-ae-action="open_appstore" data-ae-label="from_footer_badge"><img src="img/appstore_badge.svg"></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -257,21 +267,20 @@
                <div class="s-12 l-3">
                 <a href="#" class=" logo"><img src="img/wonderlogo.svg"></a>
 
-
                 <ul class="socialmenu">
-                  <li><a href="https://www.facebook.com/wonderfoodapp" class="social_fb" target="_blank">facebook</a></li>
-                  <li><a href="https://www.instagram.com/wonderfood_app/" class="social_instagram" target="_blank">instagram</a></li>
-                  <li><a href="https://twitter.com/wonderfood_app" class="social_twitter" target="_blank">twitter</a></li>
-                  <li><a href="https://www.linkedin.com/company/wonderfood/" class="social_linkedin" target="_blank">linkedin</a></li>
+                  <li><a href="https://urlgeni.us/facebook/wonderfood_app" class="social_fb analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="facebook">facebook</a></li>
+                  <li><a href="https://urlgeni.us/instagram/wonderfood_app" class="social_instagram analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="instagram">instagram</a></li>
+                  <li><a href="https://urlgeni.us/twitter/wonderfood_app" class="social_twitter analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="twitter">twitter</a></li>
+                  <li><a href="https://urlgeni.us/linkedin/wonderfood_app" class="social_linkedin analytics-event" target="_blank" data-ae-action="open_social" data-ae-label="linkedin">linkedin</a></li>
                 </ul>
                </div>
 
                <div class="s-12 l-2 l-offset-2">
                 <ul class="footermenu">
-                  <li><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank">Blog</a></li>
+                  <li><a href="https://medium.com/whats-on-the-table-the-official-wonderfood-blog" target="_blank" class="analytics-event" data-ae-action="open_blog" data-ae-label="from_footer">Blog</a></li>
                   <li><a href="/#about">About us</a></li>
-                  <li><a href="mailto:info@wonderfoodapp.com">Contact us</a></li>
-                  <li><a href="legal">Legal</a></li>
+                  <li><a href="mailto:info@wonderfoodapp.com" class="analytics-event" data-ae-action="contact_us">Contact us</a></li>
+                  <li><a href="/legal" class="analytics-event" data-ae-action="open_legal">Legal</a></li>
                 </ul>
                </div>
 
@@ -292,7 +301,7 @@
 
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c966859cae2f6b8121a7ce238_de81a48134" tabindex="-1" value=""></div>
                   <div class="s-12 l-2 l-offset-1">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button analytics-event" data-ae-action="subscribe_to_newsletter">
                   </div>
                   
                 </form><!--end form -->
@@ -306,73 +315,22 @@
            
             </div>
       </footer>                                                                   
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>              
-      <script type="text/javascript" src=" "></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
       <script type="text/javascript">
-         jQuery(document).ready(function($) {	  
-           // Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
+        jQuery(document).ready(function ($) {
+          $('.analytics-event').click(function () {
+            var $this = $(this);
+            var action = $this.data("ae-action");
+            var label = $this.data("ae-label");
+            if (label) { window.ga('send', 'event', 'page_usage', action, label); }
+            else { window.ga('send', 'event', 'page_usage', action); }
+          });
         });
-      }
-    }
-  });
 
-
-
-
-var windw = this;
-
-$.fn.followTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
-    
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                bottom: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                bottom: 0
-            });
-        }
-    });
-};
-
-$('#downloadbar').followTo(2980);
-         });	 
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        window.ga('create', 'UA-81947314-2', 'auto');
+        window.ga('send', 'pageview');
       </script>
+      <script src='https://www.google-analytics.com/analytics.js'></script>
    </body>
 </html>
