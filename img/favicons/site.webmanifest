@@ -1,0 +1,20 @@
+{
+    "name": "Wonderfood",
+    "short_name": "Wonderfood",
+    "icons": [
+        {
+            "src": "/img/favicons/android-chrome-192x192.png?v=PYqPwXvq9E",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/favicons/android-chrome-512x512.png?v=PYqPwXvq9E",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "http://wonderfoodapp.com/",
+    "display": "standalone"
+}
