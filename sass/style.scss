@@ -104,7 +104,7 @@ $Green: #0fe3ad;
   @at-root #{".webp" &} {
     #{$property}: $webp-value
   }
-  @at-root #{".no-webp" &} {
+  @at-root #{".no-js" &, ".no-webp" &} {
     #{$property}: $no-webp-value
   }
 }
@@ -533,7 +533,7 @@ $Green: #0fe3ad;
   @include boximage;
   @include webp-background-image(
     url("../img/featuretwo.webp"),
-    url("../img/featuretwo.png"));
+    url("../img/featuretwo.jpg"));
   position: relative !important;
   z-index: 1;
   @include mobile {
