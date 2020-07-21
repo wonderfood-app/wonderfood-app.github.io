@@ -64,19 +64,20 @@ $Green: #0fe3ad;
 }
 
 @font-face {
-  font-family: NeueHaasGroteskRegular;
-  src: url("../fonts/NeueHaasGroteskRegular.ttf");
+  font-family: "NeueHaasGroteskRegular";
+  src: local("../fonts/NeueHaasGroteskRegular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Tiempos Headline";
-  src: url("../fonts/TiemposHeadline-Regular.eot");
-  src: url("../fonts/TiemposHeadline-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/TiemposHeadline-Regular.woff") format("woff"),
-    url("../fonts/TiemposHeadline-Regular.ttf") format("truetype");
+  src: local("../fonts/TiemposHeadline-Regular.eot"),
+       local("../fonts/TiemposHeadline-Regular.eot?#iefix") format("embedded-opentype"),
+       local("../fonts/TiemposHeadline-Regular.woff") format("woff"),
+       local("../fonts/TiemposHeadline-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @mixin mobilemargin {
